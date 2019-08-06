@@ -2,7 +2,13 @@
 <!--<p>Find me in app/views/tasks/index.html.erb</p>-->
 
 <% @tasks.each do |task| %>
-  <h1><%= link_to task.title, tasks_path(task) %></h1>
-  <p><%= task.title %><input type="checkbox" <%= task.completed %>></p>
-  <!--<p><%= task.details %></p>-->
+  <p><%= link_to task.title, task_path(task) %><input type="checkbox" checked= ></p>
+  <%= link_to 'Edit task', edit_task_path(task) %>
+  <%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 <% end %>
+
+<p>-------------------------------------------</p>
+
+<%= link_to 'Add a new task', tasks_new_path %>
