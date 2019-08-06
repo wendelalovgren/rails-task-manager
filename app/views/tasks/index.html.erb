@@ -2,6 +2,7 @@
 <!--<p>Find me in app/views/tasks/index.html.erb</p>-->
 
 <% @tasks.each do |task| %>
+  <h1><%= link_to task.title, tasks_path(task) %></h1>
   <p><%= task.title %><input type="checkbox" <%= task.completed %>></p>
   <!--<p><%= task.details %></p>-->
 <% end %>
